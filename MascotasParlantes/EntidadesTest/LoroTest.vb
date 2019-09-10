@@ -15,7 +15,7 @@ Module LoroTest
         loro1.Escuchar("Papita")
         loro1.Escuchar("pa el loro ")
         loro1.Escuchar("Juan")
-        For index = 1 To 3
+        For index = 1 To 4
             Console.WriteLine(loro1.Hablar)
         Next
     End Sub
