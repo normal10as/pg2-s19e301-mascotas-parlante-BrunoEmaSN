@@ -1,5 +1,4 @@
-﻿Imports System.DateTime
-Public Class Loro
+﻿Public Class Loro
     Private memoria As New Queue(Of String)
     Private memoria2 As String
     Public _nombre As String
@@ -38,7 +37,7 @@ Public Class Loro
         Dim hoy As Date = Date.Today()
         Dim edad As UShort = ((hoy.Year) - (fechaNacimiento.Year))
 
-        If (hoy.Month > fechaNacimiento.Month) Then
+        If (hoy.Month < fechaNacimiento.Month) Then
             Return edad - 1
         ElseIf (hoy.Month = fechaNacimiento.Month And hoy.Day < fechaNacimiento.Day) Then
             Return edad - 1
@@ -47,7 +46,7 @@ Public Class Loro
         End If
     End Function
 
-    Public Sub Escuchar(frase As String)
+    Public Overridable Sub Escuchar(frase As String)
         memoria.Enqueue(frase)
     End Sub
 
@@ -56,5 +55,9 @@ Public Class Loro
             memoria2 &= memoria.Dequeue()
         End If
         Return memoria2
+    End Function
+
+    Public Overrides Function ToString() As String
+        Return Nombre
     End Function
 End Class

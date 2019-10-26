@@ -1,8 +1,7 @@
-Imports System
 Imports Entidades
 
 Module LoroTest
-    Sub Main()
+    Sub Loro()
         Dim loro1 As New Loro()
         Console.WriteLine("Nombre: " & loro1.Nombre)
         Console.WriteLine("Edad: " & loro1.Edad)
